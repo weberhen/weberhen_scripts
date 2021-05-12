@@ -15,9 +15,7 @@ if __name__ == '__main__':
 
     files = os.listdir(args.inputfolder)
     for file in files:
-        file = '9C4A3587-others-00-1.98440-1.08741.exr'
         print(file)
         im = hdrio.imread(os.path.join(args.inputfolder, file))
         im = tonemap_hdr(im)
         hdrio.imwrite(im, os.path.join(args.outputfolder, file[:-4]+'.png'))
-        exit()
